@@ -8,6 +8,7 @@ import sys
 import Serverui
 
 PORT_NO = 50500
+HOST_NO = ''
 
 server = None
 
@@ -69,7 +70,7 @@ def server_socket_proc(cls):
     if cls.server_flag:
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP) as server_sock:
-                server_sock.bind(('', PORT_NO))
+                server_sock.bind((HOST_NO, PORT_NO))
                 server_sock.listen()
                 server = server_sock
                 cls.ui.labelConnectionInfo.setText('Server listening...')
