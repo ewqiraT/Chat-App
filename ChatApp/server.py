@@ -23,7 +23,8 @@ class MainWindow(QMainWindow):
         self.ui = Serverui.Ui_MainWindow()
         self.ui.setupUi(self)
         self.server_flag = False
-
+        
+        self.ui.textEdit.append(f'(Host No: localhost) (Port No: {PORT_NO})')
         self.ui.actionStart.triggered.connect(self.actionStartHandler)
         self.ui.actionStart_2.triggered.connect(self.actionStartHandler)
         self.ui.actionStop.triggered.connect(self.actionStopHandler)
